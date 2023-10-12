@@ -21,6 +21,7 @@
         <StackPanel Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" Orientation="Horizontal">
             <Image Source="Assets/ScottishGlen.jpg.png" Grid.Column="1" />
             <TextBlock FontSize="72" Grid.Column="1" VerticalAlignment="Center" Margin="100,0,0,0">Asset Tracker</TextBlock>
+            <Button Content="Click Me" Click="Button_Click"></Button>
         </StackPanel>
         
         
