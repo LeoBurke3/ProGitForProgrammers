@@ -1,0 +1,21 @@
+You can use String.Join to convert a List<string> to a string with delimiter. Here is an example code snippet in C#:
+
+C#
+This code is AI-generated. Review and use carefully. Visit our FAQ for more information.
+
+List<string> names = new List<string> () { "John", "Anna", "Monica" };
+var result = String.Join (", ", names.ToArray ());
+This will produce the following output:
+
+John, Anna, Monica
+
+If you want to add a string to a List<string>, you can use the Add method. Here is an example code snippet in C#:
+
+C#
+This code is AI-generated. Review and use carefully. Visit our FAQ for more information.
+
+var Resnames= new List<string> ();
+string name = "something";
+Resnames.Add (name);
+This will add the string "something" to the list Resnames.
+from Bing ChatBot

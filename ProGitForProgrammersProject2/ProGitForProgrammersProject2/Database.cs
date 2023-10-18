@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
-using MySql.Data;
 using Windows.UI.Popups;
+using MySqlConnector;
 
 namespace ProGitForProgrammersProject2
 {
@@ -14,26 +13,30 @@ namespace ProGitForProgrammersProject2
         
         public void mySQLlogin()
         {
+            string connstring = "server=lochnagar.abertay.ac.uk; user=sql2301619; database=sql2301619; password=likely cook socks world;";
+            MySqlConnection conn = new MySqlConnection(connstring);
+            
             try
-            {
-                string connstring = "server=lochnagar.abertay.ac.uk;user=sql2301619;database=sql2301619;password=likely cook socks world";
-                MySqlConnection conn = new MySqlConnection(connstring);
-
+            { 
                 conn.Open();
 
                 string sqlQuery_Employees = "SELECT * FROM `employee`";
 
                 MySqlCommand cmd = new MySqlCommand(sqlQuery_Employees, conn);
                 MySqlDataReader reader = cmd.ExecuteReader();
-
+                List<string> names = new List<string>();
+               
                 while (reader.Read())
                 {
-                    var msg = new MessageDialog("Name " + reader["ename"]).ShowAsync();
+                    names.Add(reader["ename"].ToString());
                 }
-                conn.Close();
-            } catch(MySqlException ex)
+                var result = String.Join(", ", names.ToArray());
+
+                var msg = new MessageDialog(result).ShowAsync();
+            } catch(Exception ex)
             {
-                var msg = new MessageDialog("Error: " +  ex.Message);
+                var msg = new MessageDialog("Error: " +  ex.ToString()).ShowAsync();
+                conn.Close();
             }
 
         }
