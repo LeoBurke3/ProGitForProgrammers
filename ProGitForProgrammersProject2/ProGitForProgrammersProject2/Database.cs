@@ -40,5 +40,9 @@ namespace ProGitForProgrammersProject2
             }
 
         }
+        public void addEmployee()
+        {
+
+        }
     }
 }

@@ -32,5 +32,10 @@ namespace ProGitForProgrammersProject2
             Database database = new Database();
             database.mySQLlogin();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Nav_Pop.IsOpen = true;
+        }
     }
 }

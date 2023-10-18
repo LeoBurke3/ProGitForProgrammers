@@ -23,7 +23,35 @@
             <TextBlock FontSize="72" Grid.Column="1" VerticalAlignment="Center" Margin="100,0,0,0">Asset Tracker</TextBlock>
             <Button Content="Click Me" Click="Button_Click"></Button>
         </StackPanel>
-        
-        
+        <StackPanel Grid.Column="1" Grid.Row="1">
+            <StackPanel >
+                <TextBlock Text="Employee:" FontSize="48" Margin="10"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Add" Margin="10" FontSize="30" Click="Button_Click_1"></Button>
+                <Button Content="View" Margin="10" FontSize="30"></Button>
+                <Button Content="Delete" Margin="10" FontSize="30"></Button>
+            </StackPanel>
+        </StackPanel>
+
+        <Popup x:Name="Nav_Pop" 
+        IsOpen="False" 
+        Width="400" 
+        Height="400" 
+        IsLightDismissEnabled="True"
+        VerticalAlignment="Center" HorizontalAlignment="Center"
+        LightDismissOverlayMode="On" Grid.Row="1">
+            <Border BorderBrush="{StaticResource ApplicationForegroundThemeBrush}" 
+                Background="{StaticResource ApplicationPageBackgroundThemeBrush}"
+                BorderThickness="2" Width="400" Height="400">
+                <StackPanel Background="Wheat">
+                    <Button>Button</Button>
+                    <TextBlock>Hello</TextBlock>
+                </StackPanel>
+            </Border>
+
+
+        </Popup>
+
     </Grid>
 </Page>

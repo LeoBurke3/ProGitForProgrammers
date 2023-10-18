@@ -13,10 +13,7 @@ namespace ProGitForProgrammersProject2
         public string surname { get; set; }
         public string email { get; set; }
 
-        public void add()
-        {
-            
-        }
+        
     }
 
 }
