@@ -33,25 +33,32 @@
                 <Button Content="Delete" Margin="10" FontSize="30"></Button>
             </StackPanel>
         </StackPanel>
-
-        <Popup x:Name="Nav_Pop" 
-        IsOpen="False" 
-        Width="400" 
-        Height="400" 
-        IsLightDismissEnabled="True"
-        VerticalAlignment="Center" HorizontalAlignment="Center"
-        LightDismissOverlayMode="On" Grid.Row="1">
-            <Border BorderBrush="{StaticResource ApplicationForegroundThemeBrush}" 
+        <Grid Grid.RowSpan="3" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Popup x:Name="Nav_Pop" 
+            IsOpen="False" 
+            Width="400" 
+            Height="400" 
+            IsLightDismissEnabled="True"
+            VerticalAlignment="Center" HorizontalAlignment="Center"
+            LightDismissOverlayMode="On" Grid.Row="1"  >
+                <Border BorderBrush="{StaticResource ApplicationForegroundThemeBrush}" 
                 Background="{StaticResource ApplicationPageBackgroundThemeBrush}"
                 BorderThickness="2" Width="400" Height="400">
-                <StackPanel Background="Wheat">
-                    <Button>Button</Button>
-                    <TextBlock>Hello</TextBlock>
-                </StackPanel>
-            </Border>
-
-
-        </Popup>
+                    <StackPanel Background="White">
+                        <StackPanel HorizontalAlignment="Center">
+                            <TextBlock FontWeight="Bold" Padding="0,10,0,15" FontSize="16">Enter Employee Details</TextBlock>
+                            <TextBlock>First Name:</TextBlock>
+                            <TextBox></TextBox>
+                            <TextBlock>Surname:</TextBlock>
+                            <TextBox></TextBox>
+                            <TextBlock>Email:</TextBlock>
+                            <TextBox></TextBox>
+                            <Button HorizontalAlignment="Center" Margin="10">Add Employee</Button>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </Popup>
+        </Grid>
 
     </Grid>
 </Page>
