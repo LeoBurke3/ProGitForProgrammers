@@ -30,7 +30,6 @@ namespace ProGitForProgrammersProject2
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Database database = new Database();
-            database.mySQLlogin();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

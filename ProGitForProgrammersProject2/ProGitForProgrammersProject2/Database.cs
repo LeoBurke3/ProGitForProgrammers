@@ -11,7 +11,7 @@ namespace ProGitForProgrammersProject2
     internal class Database
     {
         
-        public void mySQLlogin()
+        public MySqlConnection mySQLconnect()
         {
             string connstring = "server=lochnagar.abertay.ac.uk; user=sql2301619; database=sql2301619; password=likely cook socks world;";
             MySqlConnection conn = new MySqlConnection(connstring);
@@ -20,29 +20,19 @@ namespace ProGitForProgrammersProject2
             { 
                 conn.Open();
 
-                string sqlQuery_Employees = "SELECT * FROM `employee`";
-
-                MySqlCommand cmd = new MySqlCommand(sqlQuery_Employees, conn);
-                MySqlDataReader reader = cmd.ExecuteReader();
-                List<string> names = new List<string>();
-               
-                while (reader.Read())
-                {
-                    names.Add(reader["ename"].ToString());
-                }
-                var result = String.Join(", ", names.ToArray());
-
-                var msg = new MessageDialog(result).ShowAsync();
             } catch(Exception ex)
             {
                 var msg = new MessageDialog("Error: " +  ex.ToString()).ShowAsync();
                 conn.Close();
             }
-
+            return conn;
         }
         public void addEmployee()
         {
+            string sqlQuery_Employees = "SELECT * FROM `employee`";
 
+            MySqlCommand cmd = new MySqlCommand(sqlQuery_Employees, mySQLconnect());
+            MySqlDataReader reader = cmd.ExecuteReader();
         }
     }
 }
