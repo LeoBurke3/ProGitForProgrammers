@@ -1,2 +1,2 @@
 # ProGitForProgrammers
-A demo project from chapter 2.
+CMP307 Project.
