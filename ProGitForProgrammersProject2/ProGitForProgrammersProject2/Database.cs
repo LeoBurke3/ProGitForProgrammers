@@ -34,5 +34,9 @@ namespace ProGitForProgrammersProject2
             MySqlCommand cmd = new MySqlCommand(sqlQuery_Employees, mySQLconnect());
             MySqlDataReader reader = cmd.ExecuteReader();
         }
+        public void addAsset()
+        {
+
+        }
     }
 }

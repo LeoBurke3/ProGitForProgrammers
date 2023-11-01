@@ -32,9 +32,13 @@ namespace ProGitForProgrammersProject2
             Database database = new Database();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Add_Employee(object sender, RoutedEventArgs e)
         {
-            Nav_Pop.IsOpen = true;
+            Nav_Pop_Add_Employee.IsOpen = true;
+        }
+        private void Add_Asset(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
