@@ -27,18 +27,28 @@ namespace ProGitForProgrammersProject2
             this.InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Database database = new Database();
-        }
-
         private void Add_Employee(object sender, RoutedEventArgs e)
         {
-            Nav_Pop_Add_Employee.IsOpen = true;
+            //Nav_Pop_Add_Employee.IsOpen = true;
         }
-        private void Add_Asset(object sender, RoutedEventArgs e)
+        private void Add_Asset_Popup(object sender, RoutedEventArgs e)
         {
+            Nav_Pop_Add_Asset.IsOpen = true;
+            
+        }
 
+        private void Add_Asset_Click(object sender, RoutedEventArgs e)
+        {
+            Asset asset = new Asset
+            {
+                name = assetName.Text,
+                model = assetModel.Text,
+                manufacturer = assetManu.Text,
+                type = assetType.Text,
+                ipAddress = assetIP.Text
+            };
+            Database database = new Database();
+            database.addAsset(asset);
         }
     }
 }

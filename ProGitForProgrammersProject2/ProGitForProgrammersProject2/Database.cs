@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Popups;
 using MySqlConnector;
+using MySqlX.XDevAPI.Relational;
+using Org.BouncyCastle.Utilities.Collections;
 
 namespace ProGitForProgrammersProject2
 {
@@ -29,14 +31,22 @@ namespace ProGitForProgrammersProject2
         }
         public void addEmployee()
         {
-            string sqlQuery_Employees = "SELECT * FROM `employee`";
+            string sqlQuery_Employees = "SELECT * FROM `employees`";
 
             MySqlCommand cmd = new MySqlCommand(sqlQuery_Employees, mySQLconnect());
             MySqlDataReader reader = cmd.ExecuteReader();
-        }
-        public void addAsset()
-        {
 
+            var msg = new MessageDialog(reader.ToString()).ShowAsync();
+        }
+        public void addAsset(Asset asset)
+        {
+             MySqlConnection conn = mySQLconnect();
+            string sqlQuery_Employees = ($"INSERT INTO asset(sname, model, type, manufacturer,ip) VALUES" +
+                $"('{asset.name}', '{asset.model}', '{asset.type}','{asset.manufacturer}','{asset.ipAddress}')");
+
+            MySqlCommand cmd = new MySqlCommand(sqlQuery_Employees, mySQLconnect());
+            MySqlDataReader reader = cmd.ExecuteReader();
+            // conn.Close();
         }
     }
 }

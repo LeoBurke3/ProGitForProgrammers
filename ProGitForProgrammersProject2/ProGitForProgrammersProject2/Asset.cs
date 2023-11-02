@@ -11,6 +11,7 @@ namespace ProGitForProgrammersProject2
         public string name { get; set; }
         public string model { get; set; }
         public string manufacturer { get; set; }
+        public string type {  get; set; }
         public string ipAddress { get; set; }
     }
 }

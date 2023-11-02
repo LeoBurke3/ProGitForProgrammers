@@ -21,14 +21,14 @@
         <StackPanel Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" Orientation="Horizontal">
             <Image Source="Assets/ScottishGlen.jpg.png"/>
             <TextBlock FontSize="72" Grid.Column="1" VerticalAlignment="Center" Margin="100,0,0,0">Asset Tracker</TextBlock>
-            <Button Content="Click Me" Click="Button_Click"></Button>
+            
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.Row="1">
             <StackPanel >
                 <TextBlock Text="Employee" FontSize="48" Margin="10"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Button Content="Add" Margin="10" FontSize="30" Click="Add_Employee"></Button>
+                <Button Content="Add" Margin="10" FontSize="30" ></Button>
                 <Button Content="View" Margin="10" FontSize="30"></Button>
                 <Button Content="Delete" Margin="10" FontSize="30"></Button>
             </StackPanel>
@@ -36,14 +36,14 @@
                 <TextBlock Text="Asset" FontSize="48" Margin="10"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Button Content="Add" Margin="10" FontSize="30" Click="Add_Asset"></Button>
+                <Button Content="Add" Margin="10" FontSize="30" Click="Add_Asset_Popup"></Button>
                 <Button Content="View" Margin="10" FontSize="30"></Button>
                 <Button Content="Edit" Margin="10" FontSize="30"></Button>
                 <Button Content="Delete" Margin="10" FontSize="30"></Button>
             </StackPanel>
         </StackPanel>
         <Grid Grid.RowSpan="3" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Popup x:Name="Nav_Pop_Add_Employee" 
+            <Popup x:Name="Nav_Pop_Add_Asset" 
             IsOpen="False" 
             Width="400" 
             Height="400" 
@@ -55,14 +55,18 @@
                 BorderThickness="2" Width="400" Height="400">
                     <StackPanel Background="White">
                         <StackPanel HorizontalAlignment="Center">
-                            <TextBlock FontWeight="Bold" Padding="0,10,0,15" FontSize="16">Enter Employee Details</TextBlock>
-                            <TextBlock>First Name:</TextBlock>
-                            <TextBox></TextBox>
-                            <TextBlock>Surname:</TextBlock>
-                            <TextBox></TextBox>
-                            <TextBlock>Email:</TextBlock>
-                            <TextBox></TextBox>
-                            <Button HorizontalAlignment="Center" Margin="10">Add Employee</Button>
+                            <TextBlock FontWeight="Bold" Padding="0,10,0,15" FontSize="16">Enter Asset Details</TextBlock>
+                            <TextBlock>Name:</TextBlock>
+                            <TextBox x:Name="assetName"></TextBox>
+                            <TextBlock>Model:</TextBlock>
+                            <TextBox x:Name="assetModel"></TextBox>
+                            <TextBlock>Type:</TextBlock>
+                            <TextBox x:Name="assetType"></TextBox>
+                            <TextBlock>Manufacturer:</TextBlock>
+                            <TextBox x:Name="assetManu"></TextBox>
+                            <TextBlock>IP Address:</TextBlock>
+                            <TextBox x:Name="assetIP"></TextBox>
+                            <Button HorizontalAlignment="Center" Margin="10" Click="Add_Asset_Click">Add Asset</Button>
                         </StackPanel>
                     </StackPanel>
                 </Border>
