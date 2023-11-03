@@ -29,7 +29,7 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Button Content="Add" Margin="10" FontSize="30" ></Button>
-                <Button Content="View" Margin="10" FontSize="30"></Button>
+                <Button Content="View" Margin="10" FontSize="30" Click="View_Employee_Popup"></Button>
                 <Button Content="Delete" Margin="10" FontSize="30"></Button>
             </StackPanel>
             <StackPanel >
@@ -67,6 +67,27 @@
                             <TextBlock>IP Address:</TextBlock>
                             <TextBox x:Name="assetIP"></TextBox>
                             <Button HorizontalAlignment="Center" Margin="10" Click="Add_Asset_Click">Add Asset</Button>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </Popup>
+        </Grid>
+        <Grid Grid.RowSpan="3" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+           
+            <Popup x:Name="Nav_Pop_View_Employee" 
+                IsOpen="False" 
+                Width="400" 
+                Height="400" 
+                IsLightDismissEnabled="True"
+                VerticalAlignment="Center" HorizontalAlignment="Center"
+                LightDismissOverlayMode="On" >
+                <Border BorderBrush="{StaticResource ApplicationForegroundThemeBrush}" 
+        Background="{StaticResource ApplicationPageBackgroundThemeBrush}"
+        BorderThickness="2" Width="600" Height="300">
+                    <StackPanel Background="White">
+                        <StackPanel HorizontalAlignment="Center">
+                            <TextBlock >View Employees</TextBlock>
+                            
                         </StackPanel>
                     </StackPanel>
                 </Border>

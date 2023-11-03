@@ -50,5 +50,10 @@ namespace ProGitForProgrammersProject2
             Database database = new Database();
             database.addAsset(asset);
         }
+
+        private void View_Employee_Popup(object sender, RoutedEventArgs e)
+        {
+            Nav_Pop_View_Employee.IsOpen = true;
+        }
     }
 }
