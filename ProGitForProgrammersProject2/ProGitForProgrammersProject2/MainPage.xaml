@@ -89,8 +89,10 @@
                         <StackPanel HorizontalAlignment="Center">
                             <TextBlock >View Employees</TextBlock>
                             <controls:DataGrid
-                                x:Name="EmployeeGrid">
+                                x:Name="EmployeeGrid"
                                 
+                                AutoGenerateColumns="True">
+
                             </controls:DataGrid>
                         </StackPanel>
                     </StackPanel>

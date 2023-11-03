@@ -54,6 +54,7 @@ namespace ProGitForProgrammersProject2
         private void View_Employee_Popup(object sender, RoutedEventArgs e)
         {
             Nav_Pop_View_Employee.IsOpen = true;
+
         }
     }
 }

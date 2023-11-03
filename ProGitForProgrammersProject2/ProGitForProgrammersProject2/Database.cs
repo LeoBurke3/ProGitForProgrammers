@@ -29,18 +29,20 @@ namespace ProGitForProgrammersProject2
             }
             return conn;
         }
-        public void addEmployee()
+        public void viewEmployee()
         {
-            string sqlQuery_Employees = "SELECT * FROM `employees`";
+            MySqlConnection connection = mySQLconnect();
+            string sqlQuery_Employees = "SELECT * FROM `employee`";
 
             MySqlCommand cmd = new MySqlCommand(sqlQuery_Employees, mySQLconnect());
-            MySqlDataReader reader = cmd.ExecuteReader();
+            MySqlDataAdapter dataAdapter = new MySqlDataAdapter(cmd);
 
-            var msg = new MessageDialog(reader.ToString()).ShowAsync();
+            
+
         }
         public void addAsset(Asset asset)
         {
-             MySqlConnection conn = mySQLconnect();
+             //MySqlConnection conn = mySQLconnect();
             string sqlQuery_Employees = ($"INSERT INTO asset(sname, model, type, manufacturer,ip) VALUES" +
                 $"('{asset.name}', '{asset.model}', '{asset.type}','{asset.manufacturer}','{asset.ipAddress}')");
 
