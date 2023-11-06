@@ -27,9 +27,9 @@ namespace ProGitForProgrammersProject2
             this.InitializeComponent();
         }
 
-        private void Add_Employee(object sender, RoutedEventArgs e)
+        private void Add_Employee_Popup(object sender, RoutedEventArgs e)
         {
-            //Nav_Pop_Add_Employee.IsOpen = true;
+           Add_Employee_Form.IsOpen = true;
         }
         private void Add_Asset_Popup(object sender, RoutedEventArgs e)
         {
@@ -55,6 +55,17 @@ namespace ProGitForProgrammersProject2
         {
             Nav_Pop_View_Employee.IsOpen = true;
 
+        }
+        private void Add_Employee_Click(object sender, RoutedEventArgs e)
+        {
+            Employee employee = new Employee
+            {
+                firstName = employeeFirstname.Text,
+                surname = employeeSurname.Text,
+                email = employeeEmail.Text
+            };
+            Database database = new Database();
+            database.addEmployee(employee);
         }
     }
 }

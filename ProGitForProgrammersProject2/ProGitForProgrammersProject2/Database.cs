@@ -37,7 +37,6 @@ namespace ProGitForProgrammersProject2
             MySqlCommand cmd = new MySqlCommand(sqlQuery_Employees, mySQLconnect());
             MySqlDataAdapter dataAdapter = new MySqlDataAdapter(cmd);
 
-            
 
         }
         public void addAsset(Asset asset)
@@ -45,6 +44,16 @@ namespace ProGitForProgrammersProject2
              //MySqlConnection conn = mySQLconnect();
             string sqlQuery_Employees = ($"INSERT INTO asset(sname, model, type, manufacturer,ip) VALUES" +
                 $"('{asset.name}', '{asset.model}', '{asset.type}','{asset.manufacturer}','{asset.ipAddress}')");
+
+            MySqlCommand cmd = new MySqlCommand(sqlQuery_Employees, mySQLconnect());
+            MySqlDataReader reader = cmd.ExecuteReader();
+            // conn.Close();
+        }
+        public void addEmployee(Employee employee)
+        {
+            //MySqlConnection conn = mySQLconnect();
+            string sqlQuery_Employees = ($"INSERT INTO employee(firstname, surname, email) VALUES" +
+                $"('{employee.firstName}', '{employee.surname}', '{employee.email}')");
 
             MySqlCommand cmd = new MySqlCommand(sqlQuery_Employees, mySQLconnect());
             MySqlDataReader reader = cmd.ExecuteReader();

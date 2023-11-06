@@ -29,7 +29,7 @@
                 <TextBlock Text="Employee" FontSize="48" Margin="10"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Button Content="Add" Margin="10" FontSize="30" ></Button>
+                <Button Content="Add" Margin="10" FontSize="30" Click="Add_Employee_Popup" ></Button>
                 <Button Content="View" Margin="10" FontSize="30" Click="View_Employee_Popup"></Button>
                 <Button Content="Delete" Margin="10" FontSize="30"></Button>
             </StackPanel>
@@ -74,6 +74,32 @@
             </Popup>
         </Grid>
         <Grid Grid.RowSpan="3" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Popup x:Name="Add_Employee_Form" 
+            IsOpen="False" 
+            Width="400" 
+            Height="400" 
+            IsLightDismissEnabled="True"
+            VerticalAlignment="Center" HorizontalAlignment="Center"
+            LightDismissOverlayMode="On" Grid.Row="1"  >
+                <Border BorderBrush="{StaticResource ApplicationForegroundThemeBrush}" 
+        Background="{StaticResource ApplicationPageBackgroundThemeBrush}"
+        BorderThickness="2" Width="400" Height="400">
+                    <StackPanel Background="White">
+                        <StackPanel HorizontalAlignment="Center">
+                            <TextBlock FontWeight="Bold" Padding="0,10,0,15" FontSize="16">Enter Employee Details</TextBlock>
+                            <TextBlock>Firstname:</TextBlock>
+                            <TextBox x:Name="employeeFirstname"></TextBox>
+                            <TextBlock>Surname:</TextBlock>
+                            <TextBox x:Name="employeeSurname"></TextBox>
+                            <TextBlock>Email:</TextBlock>
+                            <TextBox x:Name="employeeEmail"></TextBox>
+                            <Button HorizontalAlignment="Center" Margin="10" Click="Add_Employee_Click">Add Employee</Button>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </Popup>
+        </Grid>
+        <Grid Grid.RowSpan="3" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center">
            
             <Popup x:Name="Nav_Pop_View_Employee" 
                 IsOpen="False" 
@@ -88,12 +114,7 @@
                     <StackPanel Background="White">
                         <StackPanel HorizontalAlignment="Center">
                             <TextBlock >View Employees</TextBlock>
-                            <controls:DataGrid
-                                x:Name="EmployeeGrid"
-                                
-                                AutoGenerateColumns="True">
 
-                            </controls:DataGrid>
                         </StackPanel>
                     </StackPanel>
                 </Border>
