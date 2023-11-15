@@ -47,8 +47,7 @@ namespace ProGitForProgrammersProject2
                 type = assetType.Text,
                 ipAddress = assetIP.Text
             };
-            Database database = new Database();
-            database.addAsset(asset);
+            asset.addAsset(asset);
         }
 
         private void View_Employee_Popup(object sender, RoutedEventArgs e)
@@ -63,9 +62,9 @@ namespace ProGitForProgrammersProject2
                 firstName = employeeFirstname.Text,
                 surname = employeeSurname.Text,
                 email = employeeEmail.Text
+           
             };
-            Database database = new Database();
-            database.addEmployee(employee);
+            employee.addEmployee(employee);
         }
     }
 }

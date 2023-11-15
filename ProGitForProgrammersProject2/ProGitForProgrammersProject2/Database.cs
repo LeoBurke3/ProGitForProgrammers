@@ -29,16 +29,7 @@ namespace ProGitForProgrammersProject2
             }
             return conn;
         }
-        public void viewEmployee()
-        {
-            MySqlConnection connection = mySQLconnect();
-            string sqlQuery_Employees = "SELECT * FROM `employee`";
-
-            MySqlCommand cmd = new MySqlCommand(sqlQuery_Employees, mySQLconnect());
-            MySqlDataAdapter dataAdapter = new MySqlDataAdapter(cmd);
-
-
-        }
+        
         public void addAsset(Asset asset)
         {
              //MySqlConnection conn = mySQLconnect();
@@ -49,15 +40,6 @@ namespace ProGitForProgrammersProject2
             MySqlDataReader reader = cmd.ExecuteReader();
             // conn.Close();
         }
-        public void addEmployee(Employee employee)
-        {
-            //MySqlConnection conn = mySQLconnect();
-            string sqlQuery_Employees = ($"INSERT INTO employee(firstname, surname, email) VALUES" +
-                $"('{employee.firstName}', '{employee.surname}', '{employee.email}')");
-
-            MySqlCommand cmd = new MySqlCommand(sqlQuery_Employees, mySQLconnect());
-            MySqlDataReader reader = cmd.ExecuteReader();
-            // conn.Close();
-        }
+        
     }
 }
