@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,19 +12,32 @@ namespace ProGitForProgrammersProject2
 {
     public class Employee
     {
+        public int employeeID {  get; set; }
         public string firstName { get; set; }
         public string surname { get; set; }
         public string email { get; set; }
 
         Database database = new Database();
         
-        public void viewEmployee()
+        public ObservableCollection<Employee> viewEmployee()
         {   
             string sqlQuery_Employees = "SELECT * FROM `employee`";
 
-            MySqlCommand cmd = new MySqlCommand(sqlQuery_Employees, database.mySQLconnect());
-            MySqlDataAdapter dataAdapter = new MySqlDataAdapter(cmd);
+            var employees = new ObservableCollection<Employee>();
 
+            MySqlCommand cmd = new MySqlCommand(sqlQuery_Employees, database.mySQLconnect());
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                var employee = new Employee();
+                employee.employeeID = reader.GetInt32(0);
+                employee.firstName = reader.GetString(1);
+                employee.surname = reader.GetString(2);
+                employee.email = reader.GetString(3);
+                employees.Add(employee);
+            }
+            return employees;
 
         }
         public void addEmployee(Employee employee)

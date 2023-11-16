@@ -22,6 +22,7 @@ namespace ProGitForProgrammersProject2
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        
         public MainPage()
         {
             this.InitializeComponent();
@@ -53,6 +54,8 @@ namespace ProGitForProgrammersProject2
         private void View_Employee_Popup(object sender, RoutedEventArgs e)
         {
             Nav_Pop_View_Employee.IsOpen = true;
+            Employee employee = new Employee();
+            StaffList.ItemsSource = employee.viewEmployee();
 
         }
         private void Add_Employee_Click(object sender, RoutedEventArgs e)
@@ -65,6 +68,12 @@ namespace ProGitForProgrammersProject2
            
             };
             employee.addEmployee(employee);
+        }
+        private void View_Asset_Popup(object sender, RoutedEventArgs e)
+        {
+            Nav_Pop_View_Asset.IsOpen = true;
+            Asset asset = new Asset();
+            AssetList.ItemsSource = asset.viewAsset();
         }
     }
 }

@@ -12,7 +12,7 @@ namespace ProGitForProgrammersProject2
 {
     internal class Database
     {
-        
+       
         public MySqlConnection mySQLconnect()
         {
             string connstring = "server=lochnagar.abertay.ac.uk; user=sql2301619; database=sql2301619; password=likely cook socks world;";
@@ -30,16 +30,6 @@ namespace ProGitForProgrammersProject2
             return conn;
         }
         
-        public void addAsset(Asset asset)
-        {
-             //MySqlConnection conn = mySQLconnect();
-            string sqlQuery_Employees = ($"INSERT INTO asset(sname, model, type, manufacturer,ip) VALUES" +
-                $"('{asset.name}', '{asset.model}', '{asset.type}','{asset.manufacturer}','{asset.ipAddress}')");
-
-            MySqlCommand cmd = new MySqlCommand(sqlQuery_Employees, mySQLconnect());
-            MySqlDataReader reader = cmd.ExecuteReader();
-            // conn.Close();
-        }
         
     }
 }
