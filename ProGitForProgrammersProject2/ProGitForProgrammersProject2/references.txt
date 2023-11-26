@@ -23,3 +23,5 @@ from Bing ChatBot
 https://learn.microsoft.com/en-us/windows/uwp/data-access/sql-server-databases#retrieve-products-from-the-sql-server-database
 
 https://learn.microsoft.com/en-us/windows/communitytoolkit/controls/datagrid_guidance/datagrid_basics
+
+https://stackoverflow.com/questions/6803073/get-local-ip-address get ip address.

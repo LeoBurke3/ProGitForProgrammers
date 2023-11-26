@@ -6,6 +6,13 @@ using System.Text;
 using System.Threading.Tasks;
 using MySqlConnector;
 using MySqlX.XDevAPI.Relational;
+using System.Net.Sockets;
+using System.Net;
+using System.Management;
+using Windows.Devices.Enumeration;
+using Windows.Security.ExchangeActiveSyncProvisioning;
+using Windows.ApplicationModel;
+using Windows.System.Profile;
 
 namespace ProGitForProgrammersProject2
 {
@@ -20,6 +27,32 @@ namespace ProGitForProgrammersProject2
 
         Database database = new Database();
 
+        public void autoAsset()
+        {
+            //Asset name
+            Asset asset1 = new Asset();
+            asset1.name = System.Environment.MachineName;
+
+            //Asset Manufacturer & Model
+            EasClientDeviceInformation eas = new EasClientDeviceInformation();
+            asset1.manufacturer = eas.SystemManufacturer;
+            asset1.model = eas.SystemProductName;
+
+            // Asset type
+            asset1.type = AnalyticsInfo.VersionInfo.ToString();
+
+
+            // Asset ip
+            var host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (var ip in host.AddressList)
+            {
+                if (ip.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    asset1.ipAddress = ip.ToString();
+                }
+            }
+            throw new Exception("No network adapters with an IPv4 address in the system!");
+        }
         public void addAsset(Asset asset)
         {
             string sqlQuery_Employees = ($"INSERT INTO asset(sname, model, type, manufacturer,ip) VALUES" +
