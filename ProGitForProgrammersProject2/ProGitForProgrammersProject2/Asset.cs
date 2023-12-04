@@ -39,8 +39,7 @@ namespace ProGitForProgrammersProject2
             asset1.model = eas.SystemProductName;
 
             // Asset type
-            asset1.type = AnalyticsInfo.VersionInfo.ToString();
-
+            asset1.type = eas.OperatingSystem;
 
             // Asset ip
             var host = Dns.GetHostEntry(Dns.GetHostName());

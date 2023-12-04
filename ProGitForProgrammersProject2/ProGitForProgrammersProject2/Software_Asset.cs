@@ -18,7 +18,7 @@ namespace ProGitForProgrammersProject2
         public void autoSoftAsset()
         {
             Software_Asset software = new Software_Asset();
-            software.version = System.Environment.OSVersion.ToString();
+            software.version = System.Environment.OSVersion.Version.ToString();
             software.name = AnalyticsInfo.VersionInfo.ProductName.ToString();
             
 

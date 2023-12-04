@@ -17,7 +17,6 @@ namespace ProGitForProgrammersProject2
         {
             string connstring = "server=lochnagar.abertay.ac.uk; user=sql2301619; database=sql2301619; password=likely cook socks world;";
             MySqlConnection conn = new MySqlConnection(connstring);
-            
             try
             { 
                 conn.Open();
