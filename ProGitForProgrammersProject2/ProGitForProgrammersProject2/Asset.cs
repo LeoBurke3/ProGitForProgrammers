@@ -76,8 +76,8 @@ namespace ProGitForProgrammersProject2
                 asset.aid = reader.GetInt32(0);
                 asset.name = reader.GetString(1);
                 asset.model = reader.GetString(2);
-                asset.manufacturer = reader.GetString(3);
-                asset.type = reader.GetString(4);
+                asset.type = reader.GetString(3);
+                asset.manufacturer = reader.GetString(4);
                 asset.ipAddress = reader.GetString(5);
                 assets.Add(asset);
             }

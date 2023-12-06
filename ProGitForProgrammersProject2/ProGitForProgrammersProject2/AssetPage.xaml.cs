@@ -28,5 +28,10 @@ namespace ProGitForProgrammersProject2
             Asset asset = new Asset();
             AssetList.ItemsSource = asset.viewAsset();
         }
+
+        private void Link_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

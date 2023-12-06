@@ -25,3 +25,5 @@ https://learn.microsoft.com/en-us/windows/uwp/data-access/sql-server-databases#r
 https://learn.microsoft.com/en-us/windows/communitytoolkit/controls/datagrid_guidance/datagrid_basics
 
 https://stackoverflow.com/questions/6803073/get-local-ip-address get ip address.
+
+https://www.youtube.com/watch?v=lB9JsjyJyAs&list=LL&index=14 youtube for adding navigationview.
