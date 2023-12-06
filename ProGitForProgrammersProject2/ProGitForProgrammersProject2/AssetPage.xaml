@@ -14,6 +14,8 @@
                 <TextBlock FontSize="21" FontWeight="Bold" HorizontalTextAlignment="Center" >Assets</TextBlock>
                 <ListView Name="AssetList"
                 SelectionMode="Single"
+                SelectionChanged="AssetList_SelectionChanged"
+                ItemClick="AssetList_ItemClick"
                 ScrollViewer.VerticalScrollBarVisibility="Auto"
                 ScrollViewer.IsVerticalRailEnabled="True"
                 ScrollViewer.VerticalScrollMode="Enabled"
@@ -50,8 +52,8 @@
            
         </StackPanel>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="50">
-            <TextBox PlaceholderText="Employee Id here... " Margin="10"></TextBox>
-            <Button Width="75" Click="Link_Click" HorizontalAlignment="Center">Link</Button>
+            <TextBox PlaceholderText="Employee Id here... " Margin="10" x:Name="employeeID_Input"></TextBox>
+            <Button Width="75" Click="LinkButton_Click" HorizontalAlignment="Center">Link</Button>
             
         </StackPanel>
     </Grid>

@@ -84,6 +84,11 @@ namespace ProGitForProgrammersProject2
             return assets;
 
         }
+
+        public void linkAsset()
+        {
+            
+        }
     }
 
 }
