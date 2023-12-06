@@ -1,0 +1,52 @@
+﻿<Page
+    x:Class="ProGitForProgrammersProject2.AssetPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProGitForProgrammersProject2"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <StackPanel Background="White">
+            <StackPanel HorizontalAlignment="Center" Margin="50">
+                <TextBlock FontSize="21" FontWeight="Bold" HorizontalTextAlignment="Center" >Assets</TextBlock>
+                <ListView Name="AssetList"
+                SelectionMode="Single"
+                ScrollViewer.VerticalScrollBarVisibility="Auto"
+                ScrollViewer.IsVerticalRailEnabled="True"
+                ScrollViewer.VerticalScrollMode="Enabled"
+                ScrollViewer.HorizontalScrollMode="Enabled"
+                ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                ScrollViewer.IsHorizontalRailEnabled="True"
+                Margin="20">    
+                    <ListView.HeaderTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal"  >
+                                <TextBlock Text="ID" Margin="8,0" Width="50" Foreground="DarkRed" />
+                                <TextBlock Text="Name" Width="200" Foreground="DarkRed" />
+                                <TextBlock Text="Model" Width="200" Foreground="DarkRed" />
+                                <TextBlock Text="Manufacturer" Width="200" Foreground="DarkRed" />
+                                <TextBlock Text="Type" Width="200" Foreground="DarkRed" />
+                                <TextBlock Text="IP Address" Width="100" Foreground="DarkRed" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.HeaderTemplate>
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="local:Asset">
+                            <StackPanel Orientation="Horizontal" >
+                                <TextBlock Name="assetID" Text="{x:Bind aid}" Width="50" />
+                                <TextBlock Name="name" Text="{x:Bind name}" Width="200" />
+                                <TextBlock Text="{x:Bind model}" Width="200" />
+                                <TextBlock Text="{x:Bind manufacturer}" Width="200" />
+                                <TextBlock Text="{x:Bind type}" Width="200" />
+                                <TextBlock Text="{x:Bind ipAddress}" Width="100" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
