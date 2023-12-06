@@ -25,6 +25,18 @@
             <Image Source="Assets/ScottishGlen.jpg.png"/>
             <TextBlock FontSize="72" Grid.Column="1" VerticalAlignment="Center" Margin="100,0,0,0">Asset Tracker</TextBlock>
         </StackPanel>
+        <NavigationView Grid.Column="0" Grid.RowSpan="3" Content="NavigationView">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Icon="People" Content="Employees"/>
+                <NavigationViewItem Icon="Keyboard" Content="Assets"/>
+
+                <NavigationViewItem Content="Software Assets">
+                    <NavigationViewItem.Icon>
+                        <BitmapIcon UriSource="Assets/terminal_FILL0_wght200_GRAD-25_opsz24.png" />
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+            </NavigationView.MenuItems>
+        </NavigationView>
         
         <StackPanel Grid.Column="1" Grid.Row="1">
             <StackPanel>

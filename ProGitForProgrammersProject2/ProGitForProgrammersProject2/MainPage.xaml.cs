@@ -27,8 +27,8 @@ namespace ProGitForProgrammersProject2
         {
             this.InitializeComponent();
             
-            Asset asset = new Asset();
-            asset.autoAsset();
+            //Asset asset = new Asset();
+            //asset.autoAsset();
             //Software_Asset soft = new Software_Asset();
             //soft.autoSoftAsset();
         }
