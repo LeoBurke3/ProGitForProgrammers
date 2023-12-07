@@ -10,7 +10,7 @@
 
     <Grid>
         <StackPanel Background="White">
-            <StackPanel HorizontalAlignment="Center" Margin="50">
+            <StackPanel HorizontalAlignment="Left" Margin="50">
                 <TextBlock FontSize="21" FontWeight="Bold" HorizontalTextAlignment="Center" >Assets</TextBlock>
                 <ListView Name="AssetList"
                 SelectionMode="Single"
@@ -32,6 +32,7 @@
                                 <TextBlock Text="Manufacturer" Width="100" Foreground="DarkRed" />
                                 <TextBlock Text="Type" Width="100" Foreground="DarkRed" />
                                 <TextBlock Text="IP Address" Width="100" Foreground="DarkRed" />
+                                <TextBlock Text="Employee Responsible" Width="150" Foreground="DarkRed"/>
                             </StackPanel>
                         </DataTemplate>
                     </ListView.HeaderTemplate>
@@ -44,6 +45,7 @@
                                 <TextBlock Text="{x:Bind manufacturer}" Width="100" />
                                 <TextBlock Text="{x:Bind type}" Width="100" />
                                 <TextBlock Text="{x:Bind ipAddress}" Width="100" />
+                                <TextBlock Text="{x:Bind employeeID}" Width="50"/>
                             </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>
@@ -51,8 +53,9 @@
             </StackPanel>
            
         </StackPanel>
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="50">
-            <TextBox PlaceholderText="Employee Id here... " Margin="10" x:Name="employeeID_Input"></TextBox>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="0,50,50,0">
+            <TextBlock Text="Enter the employee ID to link here:" Margin="10"/>
+            <TextBox PlaceholderText="Employee ID here... " Margin="10" x:Name="employeeID_Input"></TextBox>
             <Button Width="75" Click="LinkButton_Click" HorizontalAlignment="Center">Link</Button>
             
         </StackPanel>

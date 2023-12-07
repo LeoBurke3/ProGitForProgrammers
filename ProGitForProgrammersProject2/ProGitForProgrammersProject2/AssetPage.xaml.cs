@@ -29,6 +29,7 @@ namespace ProGitForProgrammersProject2
     //var msg = new MessageDialog("Item Clicked" + asset.aid).ShowAsync();
     public sealed partial class AssetPage : Page
     {
+        
         public AssetPage()
         {
             this.InitializeComponent();
@@ -39,12 +40,22 @@ namespace ProGitForProgrammersProject2
 
         private void LinkButton_Click(object sender, RoutedEventArgs e)
         {
-            if (AssetList.SelectedValue != null && employeeID_Input.Text != "")
+            if (AssetList.SelectedValue != null && employeeID_Input.Text != "") 
             {
-                var msg3 = new MessageDialog("Congrats").ShowAsync();
+                try
+                {
+                    var asset1 = AssetList.SelectedItem as Asset;
+                    Asset asset = new Asset();
+                    asset.linkAsset(asset1.aid, employeeID_Input.Text);
+
+                    var msg4 = new MessageDialog("Asset linked!").ShowAsync();
+                } catch(Exception ex)
+                {
+                    var msg3 = new Exception(ex.Message);
+                }
             } else
             {
-                var msg2 = new MessageDialog("Error, please select an asset to link with.").ShowAsync();
+                var msg2 = new MessageDialog("Missing input.").ShowAsync();
             }
         }
 

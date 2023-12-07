@@ -24,6 +24,7 @@ namespace ProGitForProgrammersProject2
         public string manufacturer { get; set; }
         public string type {  get; set; }
         public string ipAddress { get; set; }
+        public int employeeID{ get; set; }
 
         Database database = new Database();
 
@@ -79,15 +80,30 @@ namespace ProGitForProgrammersProject2
                 asset.type = reader.GetString(3);
                 asset.manufacturer = reader.GetString(4);
                 asset.ipAddress = reader.GetString(5);
+                //Checking for null employee ID, if present send it store it
+                if (reader.IsDBNull(6))
+                {
+                   
+                } else{
+                    asset.employeeID = reader.GetInt32(6);
+                }
                 assets.Add(asset);
             }
             return assets;
 
         }
 
-        public void linkAsset()
+        public void linkAsset(int asset_id, string employee_id)
         {
-            
+            try
+            {
+                string sqlQuery = ($"UPDATE asset\r\nSET employee_id = {employee_id}\r\nWHERE aid = {asset_id};\r\n");
+                MySqlCommand cmd = new MySqlCommand(sqlQuery, database.mySQLconnect());
+                cmd.ExecuteReader();
+            } catch (Exception ex)
+            {
+                var msg = ex.Message;
+            }
         }
     }
 
