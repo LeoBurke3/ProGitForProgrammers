@@ -13,6 +13,7 @@ using Windows.Devices.Enumeration;
 using Windows.Security.ExchangeActiveSyncProvisioning;
 using Windows.ApplicationModel;
 using Windows.System.Profile;
+using Windows.UI.Popups;
 
 namespace ProGitForProgrammersProject2
 {
@@ -63,33 +64,43 @@ namespace ProGitForProgrammersProject2
         }
         public ObservableCollection<Asset> viewAsset()
         {
-            string sqlQuery_Employees = "SELECT * FROM `asset`";
-
-            var assets = new ObservableCollection<Asset>();
-
-            MySqlCommand cmd = new MySqlCommand(sqlQuery_Employees, database.mySQLconnect());
-            MySqlDataReader reader = cmd.ExecuteReader();
-
-            while (reader.Read())
+            try
             {
-                var asset = new Asset();
-                //employee.employeeID = reader.GetInt32(0);
-                asset.aid = reader.GetInt32(0);
-                asset.name = reader.GetString(1);
-                asset.model = reader.GetString(2);
-                asset.type = reader.GetString(3);
-                asset.manufacturer = reader.GetString(4);
-                asset.ipAddress = reader.GetString(5);
-                //Checking for null employee ID, if present send it store it
-                if (reader.IsDBNull(6))
+                string sqlQuery_Employees = "SELECT * FROM `asset`";
+
+                var assets = new ObservableCollection<Asset>();
+
+                MySqlCommand cmd = new MySqlCommand(sqlQuery_Employees, database.mySQLconnect());
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
                 {
-                   
-                } else{
-                    asset.employeeID = reader.GetInt32(6);
+                    var asset = new Asset();
+                    //employee.employeeID = reader.GetInt32(0);
+                    asset.aid = reader.GetInt32(0);
+                    asset.name = reader.GetString(1);
+                    asset.model = reader.GetString(2);
+                    asset.type = reader.GetString(3);
+                    asset.manufacturer = reader.GetString(4);
+                    asset.ipAddress = reader.GetString(5);
+                    //Checking for null employee ID, if present send it store it
+                    if (reader.IsDBNull(6))
+                    {
+
+                    }
+                    else
+                    {
+                        asset.employeeID = reader.GetInt32(6);
+                    }
+                    assets.Add(asset);
                 }
-                assets.Add(asset);
+                return assets;
             }
-            return assets;
+            catch(Exception ex)
+            {
+                var msg = new MessageDialog(ex.Message);
+                return null;
+            }
 
         }
 

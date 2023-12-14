@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using MySqlConnector;
 using MySqlX.XDevAPI.Relational;
 using Windows.ApplicationModel.Appointments.AppointmentsProvider;
+using Windows.UI.Popups;
 
 namespace ProGitForProgrammersProject2
 {
@@ -20,24 +21,31 @@ namespace ProGitForProgrammersProject2
         Database database = new Database();
         
         public ObservableCollection<Employee> viewEmployee()
-        {   
-            string sqlQuery_Employees = "SELECT * FROM `employee`";
-
-            var employees = new ObservableCollection<Employee>();
-
-            MySqlCommand cmd = new MySqlCommand(sqlQuery_Employees, database.mySQLconnect());
-            MySqlDataReader reader = cmd.ExecuteReader();
-
-            while (reader.Read())
+        {
+            try
             {
-                var employee = new Employee();
-                employee.employeeID = reader.GetInt32(0);
-                employee.firstName = reader.GetString(1);
-                employee.surname = reader.GetString(2);
-                employee.email = reader.GetString(3);
-                employees.Add(employee);
+                string sqlQuery_Employees = "SELECT * FROM `employee`";
+
+                var employees = new ObservableCollection<Employee>();
+
+                MySqlCommand cmd = new MySqlCommand(sqlQuery_Employees, database.mySQLconnect());
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    var employee = new Employee();
+                    employee.employeeID = reader.GetInt32(0);
+                    employee.firstName = reader.GetString(1);
+                    employee.surname = reader.GetString(2);
+                    employee.email = reader.GetString(3);
+                    employees.Add(employee);
+                }
+                return employees;
+            } catch (Exception ex)
+            {
+                var msg = new MessageDialog(ex.Message.ToString());
+                return null;
             }
-            return employees;
 
         }
         public void addEmployee(Employee employee)
