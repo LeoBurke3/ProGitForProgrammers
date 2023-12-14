@@ -110,7 +110,9 @@ namespace ProGitForProgrammersProject2
             {
                 string sqlQuery = ($"UPDATE asset\r\nSET employee_id = {employee_id}\r\nWHERE aid = {asset_id};\r\n");
                 MySqlCommand cmd = new MySqlCommand(sqlQuery, database.mySQLconnect());
-                cmd.ExecuteReader();
+                cmd.ExecuteNonQuery();
+                
+
             } catch (Exception ex)
             {
                 var msg = ex.Message;
