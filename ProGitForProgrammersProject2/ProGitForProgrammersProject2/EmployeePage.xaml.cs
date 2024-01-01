@@ -30,7 +30,7 @@ namespace ProGitForProgrammersProject2
             Employee employee = new Employee();
             StaffList.ItemsSource = employee.viewEmployee();
         }
-        public void Delete_Employee()
+        public void Delete_Employee(object sender, RoutedEventArgs e)
         {
             if(StaffList.SelectedItem != null)
             {

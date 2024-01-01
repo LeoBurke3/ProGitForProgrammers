@@ -60,7 +60,7 @@ namespace ProGitForProgrammersProject2
         {
             try
             {
-                string sqlQuery = ($"DELETE FROM employee WHERE eid = {employeeID};");
+                string sqlQuery = ($"DELETE FROM employee WHERE eid = {employee_id};");
                 MySqlCommand cmd = new MySqlCommand(sqlQuery, database.mySQLconnect());
                 cmd.ExecuteNonQuery();
 
