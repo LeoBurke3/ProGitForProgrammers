@@ -50,6 +50,15 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </StackPanel>
+            
         </StackPanel>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Top">
+            
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Width="200" VerticalAlignment="Top" Margin="0,50,50,0" Background="LightGray"  MaxHeight="300">
+                <TextBlock>Delete</TextBlock>
+                <Button Click="Delete_Employee">Delete</Button>
+            </StackPanel>
+        </StackPanel>
+
     </Grid>
 </Page>

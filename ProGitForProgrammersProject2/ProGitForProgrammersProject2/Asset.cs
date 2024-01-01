@@ -85,9 +85,7 @@ namespace ProGitForProgrammersProject2
                     asset.ipAddress = reader.GetString(5);
                     //Checking for null employee ID, if present send it store it
                     if (reader.IsDBNull(6))
-                    {
-
-                    }
+                    {}
                     else
                     {
                         asset.employeeID = reader.GetInt32(6);
@@ -116,6 +114,21 @@ namespace ProGitForProgrammersProject2
             } catch (Exception ex)
             {
                 var msg = ex.Message;
+            }
+        }
+        public void deleteAsset(int asset_id)
+        {
+            try
+            {
+                string sqlQuery = ($"DELETE FROM asset WHERE aid = {asset_id};");
+                MySqlCommand cmd = new MySqlCommand( sqlQuery, database.mySQLconnect());
+                cmd.ExecuteNonQuery();
+
+            }
+            catch(Exception ex)
+            {
+                var txt = ex.Message;
+                var msg2 = new MessageDialog(txt).ShowAsync();
             }
         }
     }

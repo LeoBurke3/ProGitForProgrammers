@@ -67,5 +67,25 @@ namespace ProGitForProgrammersProject2
         {
 
         }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            if(AssetList.SelectedValue != null)
+            {
+                try
+                {
+                    var selectedItem = AssetList.SelectedItem as Asset;
+                    Asset asset = new Asset();
+                    asset.deleteAsset(selectedItem.aid);
+                } catch(Exception ex)
+                {
+                    var txt = ex.Message;
+                    var msg = new MessageDialog(txt).ShowAsync();
+                }
+            } else
+            {
+                var msg = new MessageDialog("Select an item to delete").ShowAsync();
+            }
+        }
     }
 }

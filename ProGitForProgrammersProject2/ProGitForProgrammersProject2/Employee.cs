@@ -56,6 +56,21 @@ namespace ProGitForProgrammersProject2
             MySqlCommand cmd = new MySqlCommand(sqlQuery_Employees, database.mySQLconnect());
             cmd.ExecuteReader();
         }
+        public void deleteEmployee(int employee_id)
+        {
+            try
+            {
+                string sqlQuery = ($"DELETE FROM employee WHERE eid = {employeeID};");
+                MySqlCommand cmd = new MySqlCommand(sqlQuery, database.mySQLconnect());
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                var txt = ex.Message;
+                var msg2 = new MessageDialog(txt).ShowAsync();
+            }
+        }
 
     }
 

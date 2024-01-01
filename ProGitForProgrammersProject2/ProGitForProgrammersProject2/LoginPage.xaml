@@ -17,6 +17,6 @@
         </StackPanel>
         <TextBlock FontSize="16" Margin="462,381,462,317"><Run Text="Enter Password:"/></TextBlock>
         <TextBox Margin="462,407,462,281"/>
-        <Button Content="Authenticate" Margin="0,452,0,0" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+        <Button Content="Authenticate" Margin="0,452,0,0" VerticalAlignment="Top" Click="Button_Click" HorizontalAlignment="Center"/>
     </Grid>
 </Page>

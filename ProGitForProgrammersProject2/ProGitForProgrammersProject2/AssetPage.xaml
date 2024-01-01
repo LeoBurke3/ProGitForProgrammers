@@ -53,11 +53,17 @@
             </StackPanel>
            
         </StackPanel>
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="0,50,50,0">
-            <TextBlock Text="Enter the employee ID to link here:" Margin="10"/>
-            <TextBox PlaceholderText="Employee ID here... " Margin="10" x:Name="employeeID_Input"></TextBox>
-            <Button Width="75" Click="LinkButton_Click" HorizontalAlignment="Center">Link</Button>
-            
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Right">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="0,50,50,0" Width="200" Background="LightGray" VerticalAlignment="Top" MaxHeight="300">
+                <TextBlock Text="Enter the employee ID to link here:" Margin="10"/>
+                <TextBox PlaceholderText="Employee ID here... " Margin="10" x:Name="employeeID_Input"></TextBox>
+                <Button Width="75" Click="LinkButton_Click" HorizontalAlignment="Center">Link</Button>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Width="200" VerticalAlignment="Top" Margin="0,50,50,0" Background="LightGray"  MaxHeight="300">
+                <TextBlock>Delete</TextBlock>
+                <Button Click="Delete_Click">Delete</Button>
+            </StackPanel>
         </StackPanel>
+        
     </Grid>
 </Page>
