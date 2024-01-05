@@ -73,5 +73,19 @@ namespace ProGitForProgrammersProject2
             Asset asset = new Asset();
             AssetList.ItemsSource = asset.viewAsset();
         }
+        private void Add_Software_Asset_Popup(object sender, RoutedEventArgs e)
+        {
+            Nav_Pop_Add_Soft.IsOpen = true;
+        }
+        private void Add_Soft_Asset_Click(object sender, RoutedEventArgs e)
+        {
+            Software_Asset asset = new Software_Asset
+            {
+                name = softname.Text,
+                manufacturer = softmanufacturer.Text,
+                version = softversion.Text
+            };
+            asset.addAsset(asset);
+        }
     }
 }
