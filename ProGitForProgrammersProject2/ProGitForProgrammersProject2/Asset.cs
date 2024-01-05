@@ -40,8 +40,6 @@ namespace ProGitForProgrammersProject2
             asset1.manufacturer = eas.SystemManufacturer;
             asset1.model = eas.SystemProductName;
 
-            // Asset type
-            asset1.type = eas.OperatingSystem;
 
             // Asset ip
             var host = Dns.GetHostEntry(Dns.GetHostName());
@@ -52,7 +50,8 @@ namespace ProGitForProgrammersProject2
                     asset1.ipAddress = ip.ToString();
                 }
             }
-            throw new Exception("No network adapters with an IPv4 address in the system!");
+
+            addAsset(asset1);
         }
         public void addAsset(Asset asset)
         {

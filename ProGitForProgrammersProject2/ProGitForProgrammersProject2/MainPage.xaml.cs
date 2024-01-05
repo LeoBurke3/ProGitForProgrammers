@@ -28,10 +28,10 @@ namespace ProGitForProgrammersProject2
         {
             this.InitializeComponent();
             
-            //Asset asset = new Asset();
-            //asset.autoAsset();
-            //Software_Asset soft = new Software_Asset();
-            //soft.autoSoftAsset();
+            Asset asset = new Asset();
+            asset.autoAsset();
+            Software_Asset soft = new Software_Asset();
+            soft.autoSoftAsset();
         }
 
         private void NavigationView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)

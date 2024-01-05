@@ -60,8 +60,11 @@
                 <Button Width="75" Click="LinkButton_Click" HorizontalAlignment="Center">Link</Button>
             </StackPanel>
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Width="200" VerticalAlignment="Top" Margin="0,50,50,0" Background="LightGray"  MaxHeight="300">
-                <TextBlock>Delete</TextBlock>
-                <Button Click="Delete_Click">Delete</Button>
+                <StackPanel HorizontalAlignment="Center" Padding="10">
+                    <TextBlock Margin="10">Delete an asset:</TextBlock>
+                    <Button HorizontalAlignment="Center" Click="Delete_Click">Delete</Button>
+                </StackPanel>
+                
             </StackPanel>
         </StackPanel>
         
