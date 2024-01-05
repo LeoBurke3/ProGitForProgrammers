@@ -25,6 +25,8 @@ namespace ProGitForProgrammersProject2
         public SoftwareAssetPage()
         {
             this.InitializeComponent();
+            Software_Asset asset = new Software_Asset();
+            SoftwareList.ItemsSource = asset.viewAsset();
         }
     }
 }

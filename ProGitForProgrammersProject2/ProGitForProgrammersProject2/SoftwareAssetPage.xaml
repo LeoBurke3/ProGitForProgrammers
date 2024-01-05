@@ -9,6 +9,47 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Software Asset Page</TextBlock>
+        <StackPanel Background="White">
+            <StackPanel HorizontalAlignment="Center" Margin="50" >
+                <TextBlock FontSize="21" FontWeight="Bold" HorizontalTextAlignment="Center" >Employees</TextBlock>
+                <ListView Name="SoftwareList"
+       SelectionMode="Single"
+       ScrollViewer.VerticalScrollBarVisibility="Auto"
+       ScrollViewer.IsVerticalRailEnabled="True"
+       ScrollViewer.VerticalScrollMode="Enabled"
+       ScrollViewer.HorizontalScrollMode="Enabled"
+       ScrollViewer.HorizontalScrollBarVisibility="Auto"
+       ScrollViewer.IsHorizontalRailEnabled="True"
+       Margin="20">
+                    <ListView.HeaderTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal"  >
+                                <TextBlock Text="ID" Margin="8,0" Width="50" Foreground="DarkRed" />
+                                <TextBlock Text="Name" Width="200" Foreground="DarkRed" />
+                                <TextBlock Text="Version" Width="200" Foreground="DarkRed" />
+                                <TextBlock Text="Manufacturer" Width="300" Foreground="DarkRed" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.HeaderTemplate>
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="local:Software_Asset">
+                            <StackPanel Orientation="Horizontal" >
+                                <TextBlock Name="ItemId"
+                                 Text="{x:Bind sid}"
+                                 Width="50" />
+                                <TextBlock Name="Firstname"
+                                 Text="{x:Bind name}"
+                                 Width="200" />
+                                <TextBlock Text="{x:Bind version}"
+                                    Width="200" />
+                                <TextBlock Text="{x:Bind manufacturer}"
+                                Width="300" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+
+        </StackPanel>
     </Grid>
 </Page>
